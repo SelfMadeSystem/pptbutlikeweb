@@ -23,6 +23,8 @@ with a base36-encoded timestamp of when the build was made. The client
 occasionally checks this file to see if it is out of date, and if so,
 automatically reloads the page to get the latest version.
 
+- Slides are discovered and bundled at build time using [Bun's macros](https://bun.sh/docs/bundler/macros), which imports files from the `slides` folder into the build.
+
 ## How to set it up with Cloudflare Pages
 
 1. Clone this repository
