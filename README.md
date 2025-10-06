@@ -1,21 +1,34 @@
-# bun-react-tailwind-template
+# pptbutlikeweb
 
-To install dependencies:
+Minimalist PowerPoint-like web presentation made with Bun, React, and
+TailwindCSS for fast, offline-capable slideshows (i.e. TVs on walls and
+whatnot). Basically as simple as possible while still being useful.
 
-```bash
-bun install
-```
+Made for the [AEDIROUM](https://aediroum.ca) to make it easier for them to
+update the slides on their TVs without needing to go connect the TVs to an
+operating system or to have to manually update files on a USB key.
 
-To start a development server:
+## How to use
 
-```bash
-bun dev
-```
+- Put slides in the `slides` folder
+  - Right now, only images are supported (png, jpg, gif, svg)
+- Build the project with `bun run build`
+- Serve the `dist` folder with any static file server (e.g. `python -m http.server`)
+- Open the served site in a web browser
 
-To run for production:
+## How it works
 
-```bash
-bun start
-```
+Any time you rebuild, a new `build-date` file is created in the `dist` folder
+with a base36-encoded timestamp of when the build was made. The client
+occasionally checks this file to see if it is out of date, and if so,
+automatically reloads the page to get the latest version.
 
-This project was created using `bun init` in bun v1.2.22. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Development
+
+- Run `bun install` to install dependencies
+- Run `bun run dev` to start the development server
+- Open `http://localhost:3000` in your web browser
+
+## License
+
+[MIT](LICENSE)
