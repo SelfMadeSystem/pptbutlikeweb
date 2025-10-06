@@ -23,6 +23,19 @@ with a base36-encoded timestamp of when the build was made. The client
 occasionally checks this file to see if it is out of date, and if so,
 automatically reloads the page to get the latest version.
 
+## How to set it up with Cloudflare Pages
+
+1. Clone this repository
+2. Push it to your GitHub, GitLab, or Bitbucket repository
+3. Go to [Cloudflare Pages](https://pages.cloudflare.com/) and create a new project
+4. Connect your repository
+5. Set the build command to `bun run build`
+6. Set the build output directory to `dist`
+
+Any time you push to your repository, Cloudflare Pages will automatically
+rebuild and redeploy your site. The clients will automatically get the
+latest version thanks to the `build-date` file.
+
 ## Development
 
 - Run `bun install` to install dependencies
