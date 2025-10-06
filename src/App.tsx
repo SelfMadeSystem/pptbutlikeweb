@@ -40,11 +40,9 @@ function Slide({
       if (!show) return;
       const timeout = setTimeout(() => {
         onEnded();
-      }, 5000);
+      }, 20000);
       return () => clearTimeout(timeout);
     }
-
-    console.log({ v, show });
 
     if (!show) {
       v.pause();
@@ -127,13 +125,11 @@ export default function App() {
   useEffect(() => {
     const interval = setInterval(
       async () => {
-        console.log("Checking for new build...");
         try {
           const res = await fetch("/build-date");
           if (res.ok) {
             const serverBuildDate = parseInt(await res.text(), 36);
             if (serverBuildDate > buildDate) {
-              console.log("New build detected, reloading...");
               window.location.reload();
             }
           }

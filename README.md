@@ -11,7 +11,7 @@ operating system or to have to manually update files on a USB key.
 ## How to use
 
 - Put slides in the `slides` folder
-  - Right now, only images are supported (png, jpg, gif, svg)
+  - Supported formats: `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.mp4`, `.pdf`
 - Build the project with `bun run build`
 - Serve the `dist` folder with any static file server (e.g. `python -m http.server`)
 - Open the served site in a web browser
