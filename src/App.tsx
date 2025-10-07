@@ -64,6 +64,7 @@ function Slide({
       v.removeEventListener("ended", handleEnded);
     };
   }, [show]);
+
   if (/\.(png|jpe?g|gif|webp)$/i.test(url)) {
     return (
       <img
